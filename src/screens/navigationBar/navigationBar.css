@@ -1,0 +1,19 @@
+.navigation-container{
+    background-color: var(--nav-color);
+    color:white;
+   
+}
+
+.navbar-expand-md .navbar-nav .nav-link{
+    color: var(--font-color)  !important;
+}
+.navbar-brand{
+    color: var(--font-color)  !important;
+   
+}
+.navbar-toggler-icon{
+    filter:invert(1)
+}
+.links a:hover{
+background-color: var(--font-color-hover);
+}

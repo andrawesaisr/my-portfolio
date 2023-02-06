@@ -1,0 +1,39 @@
+export const techs=[
+    {
+        name:'React',
+        iconName:'react'
+    },
+    {
+        name:'Node.js',
+        iconName:'nodejs'
+    },
+    {
+        name:'MongoDB',
+        iconName:'mongodb'
+    },
+    {
+        name:'HTML',
+        iconName:'html5'
+    },
+    {
+        name:'CSS',
+        iconName:'css3'
+    },
+    {
+        name:'Open Source',
+        iconName:'opensource'
+    },
+    {
+        name:'GIT',
+        iconName:'git'
+    },
+    {
+        name:'JavaScript',
+        iconName:'javascript'
+    },
+    {
+        name:'npm',
+        iconName:'npm'
+    },
+    
+]
