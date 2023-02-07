@@ -17,7 +17,15 @@
   
   .contactMe__data__links a:hover {
     color: var(--light-color);
+ 
   }
+  .social_icons{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+  }
+
+
   
   @media only screen and (max-width: 600px){
     .contactMe__data__links {
