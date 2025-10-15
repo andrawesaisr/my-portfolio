@@ -4,8 +4,24 @@ export const techs = [
     iconName: "react",
   },
   {
+    name: "Next.js",
+    iconName: "nextjs",
+  },
+  {
+    name: "Vue.js",
+    iconName: "vuejs",
+  },
+  {
     name: "Node.js",
     iconName: "nodejs",
+  },
+  {
+    name: "NestJS",
+    iconName: "nestjs",
+  },
+  {
+    name: "Go",
+    iconName: "go",
   },
   {
     name: "JavaScript",
@@ -28,7 +44,7 @@ export const techs = [
     iconName: "jest",
   },
   {
-    name: "GraphQl",
+    name: "GraphQL",
     iconName: "graphql",
   },
   {
@@ -40,24 +56,31 @@ export const techs = [
     iconName: "aws",
   },
   {
+    name: "Vercel",
+    iconName: "vercel",
+  },
+  {
     name: "MongoDB",
     iconName: "mongodb",
   },
   {
-    name: "MySql",
+    name: "MySQL",
     iconName: "mysql",
   },
   {
-    name: "SqlLite",
-    iconName: "sqllite",
+    name: "PostgreSQL",
+    iconName: "postgresql",
   },
-  { name: "PostgreSQL", iconName: "postgresql" },
   {
-    name: "HTML",
+    name: "Expo",
+    iconName: "expo",
+  },
+  {
+    name: "HTML5",
     iconName: "html5",
   },
   {
-    name: "CSS",
+    name: "CSS3",
     iconName: "css3",
   },
   {
@@ -65,19 +88,15 @@ export const techs = [
     iconName: "github_full",
   },
   {
-    name: "GIT",
+    name: "Git",
     iconName: "git",
-  },
-  {
-    name: "Open Source",
-    iconName: "opensource",
   },
   {
     name: "npm",
     iconName: "npm",
   },
   {
-    name: "BootStrap",
+    name: "Bootstrap",
     iconName: "bootstrap",
   },
 ];

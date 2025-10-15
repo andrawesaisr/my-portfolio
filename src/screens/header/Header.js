@@ -1,11 +1,11 @@
 import React from "react";
-import Typed from "react-typed";
+import { ReactTyped } from "react-typed";
 import "./header.css";
 function Header() {
   return (
     <div class="main-info">
       <h1>Who Am I ?</h1>
-      <Typed
+      <ReactTyped
         strings={[
           "",
           "A Software Engineer",
@@ -20,7 +20,7 @@ function Header() {
         typeSpeed={70}
         backSpeed={50}
         loop
-      ></Typed>
+      />
     </div>
   );
 }

@@ -3,14 +3,12 @@ import "./portfolio.css";
 import portfolioData from "../../helpers/portfolioData";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import { Fade } from "react-awesome-reveal";
+
 function Portfolio() {
   const [modelShow, setModelShow] = useState(false);
-  const [tempData, setTempData] = useState([]);
+  const [tempData, setTempData] = useState({});
 
   function createModal(data) {
     return (
@@ -20,71 +18,106 @@ function Portfolio() {
         size="lg"
         arial-labelledby="contained-modal-title-vcenter"
         centered
+        className="portfolio-modal"
       >
-        <Modal.Header>
+        <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             {data.desc}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>{data.summary}</p>
+          <p className="modal-summary">{data.summary}</p>
           <Image
             src={data.image}
-            style={{ width: "470px", alignItems: "center" }}
+            className="modal-image"
+            fluid
           />
         </Modal.Body>
-        <a
-          id="portfolio-modal-link"
-          href={data.link}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Go to the repo
-        </a>
-        <Modal.Footer>
-          <div>Technologies used:</div>
-          <p style={{ fontSize: "0.9rem", marginRight: "auto" }}>
-            {" "}
-            {data.tech}
-          </p>
-          <Button onClick={() => setModelShow(false)}>Close</Button>
+        <Modal.Footer className="modal-footer-custom">
+          <div className="modal-tech-section">
+            <strong>Technologies used:</strong>
+            <p className="modal-tech-text">{data.tech}</p>
+          </div>
+          <div className="modal-actions">
+            {data.linkedinPost && (
+              <a
+                className="modal-linkedin-link"
+                href={data.linkedinPost}
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn Post →
+              </a>
+            )}
+            <a
+              className="modal-repo-link"
+              href={data.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Repository →
+            </a>
+            <Button variant="secondary" onClick={() => setModelShow(false)}>
+              Close
+            </Button>
+          </div>
         </Modal.Footer>
       </Modal>
     );
   }
 
-  const mapped = portfolioData.map((e, idx) => {
-    return (
-      <Card key={idx} id="portfolio-card-container">
-        <Image
-          className="portfolio-image"
-          onClick={() => {
-            setTempData({
-              image: e.image,
-              link: e.link,
-              desc: e.desc,
-              summary: e.summary,
-              tech: e.tech,
-            });
-            setModelShow(true);
-          }}
-          src={e.image}
-        />
-        <div className="portfolio-click-info">&#x1F50E;&#xFE0E;</div>
-        {createModal(tempData)}
-      </Card>
-    );
-  });
-
   return (
     <div className="portfolio-main-container" id="portfolio">
-      <h1>PORTFOLIO</h1>
+      <div className="portfolio-header">
+        <h1 className="portfolio-title">Portfolio</h1>
+        <p className="portfolio-subtitle">Showcasing my work and projects</p>
+      </div>
 
-      <Container fluid="id" style={{ padding: "2rem 0" }}>
-        <Fade direction="up" duration={2700} triggerOnce="true">
-          <Row>{mapped}</Row>
-        </Fade>
-      </Container>
+      <div className="portfolio-grid">
+        {portfolioData.map((e, idx) => (
+          <Fade 
+            key={idx}
+            direction="up" 
+            duration={1000} 
+            delay={idx * 100}
+            triggerOnce={true}
+          >
+            <div className="portfolio-card">
+              <div 
+                className="portfolio-card-inner"
+                onClick={() => {
+                  setTempData({
+                    image: e.image,
+                    link: e.link,
+                    desc: e.desc,
+                    summary: e.summary,
+                    tech: e.tech,
+                    linkedinPost: e.linkedinPost,
+                  });
+                  setModelShow(true);
+                }}
+              >
+                <div className="portfolio-image-wrapper">
+                  <img
+                    className="portfolio-image"
+                    src={e.image}
+                    alt={e.desc}
+                  />
+                  <div className="portfolio-overlay">
+                    <span className="portfolio-view-icon">🔍</span>
+                    <span className="portfolio-view-text">View Details</span>
+                  </div>
+                </div>
+                <div className="portfolio-card-content">
+                  <h3 className="portfolio-card-title">{e.desc}</h3>
+                </div>
+              </div>
+            </div>
+          </Fade>
+        ))}
+      </div>
+      
+      {createModal(tempData)}
     </div>
   );
 }

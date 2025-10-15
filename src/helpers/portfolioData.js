@@ -4,8 +4,27 @@ import quizApp from "../images/projects/quiz-app.gif";
 import tenzieGame from "../images/projects/tenzie-game.gif";
 import travelNotes from "../images/projects/travel-notes.gif";
 import socialMedia from "../images/projects/social-media.png";
+import tripExpenseSplitter from "../images/projects/trip-expense-splitter.png";
+import gradProject from "../images/projects/gradproject.png";
 
 const portfolioData = [
+  {
+    image: gradProject,
+    link: "https://github.com/andrawesaisr/grad-project",
+    desc: "KidsZone - Graduation Project",
+    summary:
+      "An AI-powered educational platform for children featuring interactive learning experiences. Built as my graduation project, combining modern web technologies with artificial intelligence to create an engaging learning environment for kids.",
+    tech: "React.js | Node.js | AI/ML | MongoDB",
+    linkedinPost: "https://www.linkedin.com/posts/abdalla-ahmed-889525226_graduationproject-kidszone-ai-activity-7217137906769920002-DxFM?utm_source=share&utm_medium=member_desktop&rcm=ACoAADVbUjIBa0_6w-RtdAftmRLZ_SwU1JUyrys",
+  },
+  {
+    image: tripExpenseSplitter,
+    link: "https://github.com/andrawesaisr/trip-expenses-splitter",
+    desc: "Trip Expense Splitter",
+    summary:
+      "A modern web application to easily split trip expenses among friends. Track shared costs, manage group expenses, and settle up with automatic calculations.",
+    tech: "Next.js | TypeScript | React",
+  },
   {
     image: chatApp,
     link: "https://github.com/Andrawesaisr/Chat-App",
@@ -27,29 +46,6 @@ const portfolioData = [
     link: "https://github.com/Andrawesaisr/meme-generator",
     desc: "meme generator",
     summary: "generate new memes and put some words on that meme picture",
-    tech: "React.js",
-  },
-  {
-    image: quizApp,
-    link: "https://github.com/Andrawesaisr/quiz-app",
-    desc: "quiz app",
-    summary:
-      "click start and 5 questions will appear to quiz you and will display your score",
-    tech: "React.js",
-  },
-  {
-    image: tenzieGame,
-    link: "https://github.com/Andrawesaisr/tenzie-game",
-    desc: "tenzie game",
-    summary: "this game is for kids +3 to choose the same number ",
-    tech: "React.js",
-  },
-  {
-    image: travelNotes,
-    link: "https://github.com/Andrawesaisr/travel-notes",
-    desc: "travel notes",
-    summary:
-      "you can add to the data base picture and location and some other points to a place that you have visited",
     tech: "React.js",
   },
 ];

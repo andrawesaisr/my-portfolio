@@ -1,57 +1,306 @@
-.portfolio {
-  background-color: aqua;
-}
 .portfolio-main-container {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  margin: 0;
+  position: relative;
   overflow: hidden;
-}
-.portfolio-main-container h1,
-.portfolio-main-container p {
-  text-align: center;
-  margin-top: 3rem;
+  min-height: 100vh;
 }
 
-#portfolio-card-container {
-  width: 30%;
-  height: 300px;
-  overflow: hidden;
-  padding: 10px;
-  border: none;
-}
-
-.portfolio-image:hover {
-  cursor: pointer;
-  filter: brightness(50%);
-}
-
-.portfolio-click-info {
+.portfolio-main-container::before {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--font-color);
-  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
-.portfolio-image:hover + .portfolio-click-info {
-  display: block;
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.portfolio-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff, #fff8e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.portfolio-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  z-index: 1;
+  padding: 0 1rem;
+}
+
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.portfolio-card:hover::before {
+  opacity: 1;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.portfolio-card-inner {
+  position: relative;
+  height: 100%;
+}
+
+.portfolio-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-image {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-view-icon {
+  font-size: 2.5rem;
+}
+
+.portfolio-view-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-card-content {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.portfolio-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Modal Styles */
+.portfolio-modal .modal-content {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.portfolio-modal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.portfolio-modal .modal-title {
+  color: white;
+  font-weight: 600;
+}
+
+.portfolio-modal .btn-close {
+  filter: invert(1);
+}
+
+.modal-summary {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.modal-image {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 100%;
+}
+
+.modal-footer-custom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.modal-tech-section {
+  width: 100%;
+}
+
+.modal-tech-section strong {
+  color: white;
+  font-size: 1rem;
+}
+
+.modal-tech-text {
+  margin: 0.5rem 0 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.modal-repo-link,
+.modal-linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-linkedin-link {
+  background: rgba(10, 102, 194, 0.3);
+  border-color: rgba(10, 102, 194, 0.5);
+}
+
+.modal-repo-link:hover,
+.modal-linkedin-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  transform: translateX(5px);
+}
+
+.modal-linkedin-link:hover {
+  background: rgba(10, 102, 194, 0.5);
 }
 
 .modal-backdrop.show {
-  opacity: 0.1 !important;
+  opacity: 0.8 !important;
 }
 
-#portfolio-modal-link {
-  /* padding: 0 0 1rem 1rem */
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .portfolio-main-container {
+    padding: 3rem 1rem;
+  }
+  
+  .portfolio-title {
+    font-size: 2rem;
+  }
+  
+  .portfolio-subtitle {
+    font-size: 1rem;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .portfolio-image-wrapper {
+    height: 200px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .modal-repo-link {
+    text-align: center;
+    justify-content: center;
+  }
 }
 
-#portfolio-modal-link:link {
-  text-decoration: none;
-}
-
-@media only screen and (max-width: 600px) {
-  #portfolio-card-container {
-    width: 100%;
-    padding: 0.5rem 2.5rem;
-    border: none;
+@media only screen and (max-width: 480px) {
+  .portfolio-card-content {
+    padding: 1rem;
+  }
+  
+  .portfolio-card-title {
+    font-size: 1rem;
   }
 }

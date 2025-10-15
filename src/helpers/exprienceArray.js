@@ -1,5 +1,21 @@
 import metaloop_logo from "../images/metaloop_logo.jpeg";
+import kolega_logo from "../images/Kolega.jpeg";
+
 export const expriences = [
+  {
+    logo: kolega_logo,
+    companyName: "Kolega.AI",
+    timeSpent: "Feb 2025 - Present",
+    location: "Grouville, Jersey · Remote",
+    position: "Software Engineer (Full Stack)",
+    type: "Full-time",
+    description: `Engineered full-stack solutions across diverse tech stacks, including Vue.js, React.js, Go, NestJS, Node.js, and AWS serverless (Lambda, Step Functions), integrating PostgreSQL, DynamoDB, and MongoDB for robust data management.
+
+Key Highlights:
+- Built the Avenyou platform for an Australian fintech, delivering a serverless AWS Lambda & Step Functions backend with Illion/NGR API integrations and BandaDoc automation, cutting underwriting time from 2 mins to under 40 secs.
+
+- Contributed to the design and development of Kolega's internal platform UI using React.js, enhancing user experience and interface consistency.`,
+  },
   {
     logo: metaloop_logo,
     companyName: "Metaloop",

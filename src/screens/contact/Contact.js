@@ -20,7 +20,7 @@ function Contact() {
           <p>andrawesaisr@gmail.com</p>
           <div className="social_icons">
             <SocialIcon
-              url="https://www.linkedin.com/in/andrew-aisr-49696220b/"
+              url="https://www.linkedin.com/in/andrewaisr/"
               target="_blank"
             />
             <SocialIcon
