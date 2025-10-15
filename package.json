@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
-    "@material-ui/styles": "^4.11.5",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.10",
+    "@mui/styles": "^5.11.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -19,7 +21,7 @@
     "react-scroll-motion": "^0.3.2",
     "react-social-icons": "^5.15.0",
     "react-tsparticles": "^2.8.0",
-    "react-typed": "1.2.0",
+    "react-typed": "^2.0.12",
     "react-zoom-pan-pinch": "^3.0.5",
     "web-vitals": "^2.1.4"
   },
