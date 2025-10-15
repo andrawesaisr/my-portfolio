@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./portfolio.css";
 import portfolioData from "../../helpers/portfolioData";
 import Button from "react-bootstrap/Button";

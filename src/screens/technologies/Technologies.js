@@ -1,4 +1,3 @@
-import React from 'react'
 import DevIcon from "devicon-react-svg";
 import { techs } from '../../helpers/techs';
 import { Fade } from "react-awesome-reveal";

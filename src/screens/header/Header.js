@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactTyped } from "react-typed";
 import "./header.css";
 function Header() {

@@ -1,4 +1,3 @@
-import React from "react";
 import "./contact.css";
 import { navigationLinks } from "../../helpers/navigationLinks";
 import { SocialIcon } from "react-social-icons";
