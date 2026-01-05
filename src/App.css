@@ -1,14 +1,46 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
 .App {
-  font-family: "Nunito", sans-serif;
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Monospace font for code-like elements and accents */
+h1, h2, h3, .highlight-number, .tech-name, .company-name, .position-title {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  letter-spacing: -0.5px;
 }
 
 :root {
-  --nav-color: hsl(210, 11%, 15%);
-  --nav-color-hover: hsl(210, 11%, 45%);
-  --light-color: hsl(209, 100%, 92%);
-  --font-color: hsl(0, 0%, 100%);
-  --font-color-hover: hsl(0, 0%, 40%);
+  /* Primary Dark Theme Colors */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1e1e1e;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+
+  /* Accent Colors - Professional Silver/Gray */
+  --accent-primary: #b8b8b8;
+  --accent-secondary: #8a8a8a;
+  --accent-glow: rgba(180, 180, 180, 0.12);
+  --accent-border: rgba(180, 180, 180, 0.25);
+
+  /* Text Colors */
+  --text-primary: #f5f5f5;
+  --text-secondary: rgba(245, 245, 245, 0.85);
+  --text-muted: rgba(245, 245, 245, 0.6);
+
+  /* Borders & Shadows */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-light: rgba(255, 255, 255, 0.1);
+  --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(255, 255, 255, 0.05);
+
+  /* Legacy variables for compatibility */
+  --nav-color: #0a0a0a;
+  --nav-color-hover: #d0d0d0;
+  --light-color: #d0d0d0;
+  --font-color: #f5f5f5;
+  --font-color-hover: rgba(245, 245, 245, 0.6);
 }
 .ppp {
   height: 1000px;
